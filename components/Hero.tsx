@@ -73,10 +73,10 @@ export function Hero() {
 
           <div className="mt-8 sm:mt-10">
             <Button
-              className="h-16 w-full max-w-[345px] rounded-none border border-white bg-[#FF781F] px-10 text-base font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_rgba(0,0,0,0.4)] hover:bg-[#FF781F]/90 sm:h-[88px] sm:px-12 sm:text-lg md:h-[94px] md:min-w-[345px] md:text-xl"
+              className="group h-16 w-full max-w-[345px] rounded-none border border-white bg-[#FF781F] px-10 text-base font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-white hover:text-black sm:h-[88px] sm:px-12 sm:text-lg md:h-[94px] md:min-w-[345px] md:text-xl"
             >
-              Book a Free Call 
-              <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+              Book a Free Call
+              <ArrowRight className="h-5 w-5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2 sm:h-6 sm:w-6" />
             </Button>
           </div>
 

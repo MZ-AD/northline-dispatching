@@ -15,7 +15,7 @@ const benefits = [
 
 export function WhyChooseUs() {
   return (
-    <section id="benefits" className="relative overflow-hidden bg-[#0a3151] py-20 sm:py-28">
+    <section id="benefits" className="relative overflow-hidden bg-[#0B3C5D] py-20 sm:py-28">
       <div
         className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full border border-white/[0.06] sm:h-96 sm:w-96"
         aria-hidden="true"
@@ -39,26 +39,26 @@ export function WhyChooseUs() {
               <span className="text-[#FF6B00]">Choose Us</span>
             </h2>
 
-            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/70 sm:max-w-3xl sm:text-base md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:max-w-3xl sm:text-lg md:text-xl">
               We aren&apos;t just finding loads; we&apos;re building a
               profitable business together.
               <br />
               Our success is directly tied to your success.
             </p>
 
-            <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+            <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
               {benefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex items-center gap-4 border border-white/15 bg-white/[0.06] px-5 py-4 sm:gap-4 sm:px-5 sm:py-5"
+                  className="flex items-center gap-3 border border-white/15 bg-white/[0.06] px-3 py-3 transition-colors duration-300 hover:border-orange sm:gap-3.5 sm:px-4 sm:py-3.5"
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-[#FF6B00] sm:h-9 sm:w-9">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center bg-[#FF6B00] sm:h-6 sm:w-6">
                     <Check
-                      className="h-4 w-4 text-white sm:h-[18px] sm:w-[18px]"
+                      className="h-2.5 w-2.5 text-white sm:h-3 sm:w-3"
                       strokeWidth={3}
                     />
                   </span>
-                  <span className="text-sm font-bold uppercase leading-snug tracking-wide text-white sm:text-base">
+                  <span className="text-sm font-bold uppercase leading-snug tracking-wide text-white sm:text-[15px]">
                     {benefit}
                   </span>
                 </li>
@@ -81,16 +81,16 @@ export function WhyChooseUs() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-[#0a3151]/95 from-5% via-[#0a3151]/45 via-40% to-transparent to-75%"
+                  className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/95 from-5% via-[#0B3C5D]/45 via-40% to-transparent to-75%"
                   aria-hidden="true"
                 />
               </div>
 
-              <div className="absolute bottom-7 left-1/2 z-10 w-[90%] -translate-x-1/2 border-l-4 border-[#FF6B00] bg-[#0a3151] px-6 py-5 sm:bottom-9 sm:px-8 sm:py-6">
-                <h3 className="font-display text-base font-bold uppercase leading-tight tracking-tight text-white sm:text-lg">
+              <div className="absolute bottom-7 left-1/2 z-10 w-[90%] -translate-x-1/2 border-l-4 border-orange bg-[#0B3C5D] px-6 py-5 sm:bottom-9 sm:px-8 sm:py-6">
+                <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight text-white sm:text-2xl">
                   Meet Your Partner
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/85 sm:text-[15px]">
+                <p className="mt-2 text-[15px] leading-relaxed text-white/85 sm:text-base">
                   Our dispatchers work strictly for you, acting as your personal
                   agent in the freight market.
                 </p>

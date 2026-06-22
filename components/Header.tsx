@@ -20,12 +20,17 @@ export function Logo({ className = "", compact = false }: { className?: string; 
         <span
           className={cn(
             "truncate font-bold tracking-wide text-white transition-all duration-500",
-            compact ? "text-sm sm:text-base" : "text-base sm:text-lg"
+            compact ? "text-base sm:text-lg" : "text-lg sm:text-xl"
           )}
         >
           SAM ANDERSON
         </span>
-        <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.25em] text-[#F17A28] sm:mt-1 sm:text-[10px] sm:tracking-[0.3em]">
+        <span
+          className={cn(
+            "mt-0.5 font-bold uppercase tracking-[0.25em] text-[#F17A28] sm:mt-1 sm:tracking-[0.3em]",
+            compact ? "text-[11px] sm:text-xs" : "text-xs sm:text-sm"
+          )}
+        >
           Dispatch
         </span>
       </div>
@@ -63,15 +68,15 @@ export function Header() {
 
           <nav
             className={cn(
-              "absolute left-[calc(50%+20px)] hidden -translate-x-1/2 -translate-y-1/2 items-center gap-7 font-nav transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:flex md:left-[calc(50%+24px)] lg:gap-9",
-              scrolled ? "top-1/2" : "top-[calc(50%+0px)] md:top-[calc(50%-2px)]"
+              "absolute left-[calc(50%+14px)] hidden -translate-x-1/2 -translate-y-1/2 items-center gap-7 font-nav transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:flex md:left-[calc(50%+18px)] lg:gap-9",
+              scrolled ? "top-[calc(50%-4px)]" : "top-[calc(50%-4px)] md:top-[calc(50%-6px)]"
             )}
           >
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.15em] text-white transition-colors hover:text-[#F17A28] lg:text-sm"
+                className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.125em] text-white transition-colors hover:text-[#F17A28] lg:text-sm"
               >
                 {link.label}
               </Link>
@@ -80,8 +85,10 @@ export function Header() {
 
           <Button
             className={cn(
-              "ml-auto h-12 min-w-[120px] shrink-0 translate-x-2 rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[11px] hover:-translate-y-[3px] hover:bg-white hover:text-black hover:shadow-none active:translate-x-[11px] active:-translate-y-[3px] active:bg-white active:text-black active:shadow-none md:h-[72px] md:min-w-[150px] md:translate-x-3 md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] md:hover:translate-x-[15px] md:hover:-translate-y-1 md:active:translate-x-[15px] md:active:-translate-y-1 lg:h-[79px] lg:min-w-[165px] lg:px-9",
-              !scrolled && "-translate-y-1.5 md:-translate-y-2"
+              "ml-auto h-12 min-w-[112px] shrink-0 translate-x-1 rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[11px] hover:-translate-y-[3px] hover:bg-white hover:text-black hover:shadow-none active:translate-x-[11px] active:-translate-y-[3px] active:bg-white active:text-black active:shadow-none md:h-[72px] md:min-w-[142px] md:translate-x-2 md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] md:hover:translate-x-[15px] md:hover:-translate-y-1 md:active:translate-x-[15px] md:active:-translate-y-1 lg:h-[79px] lg:min-w-[158px] lg:px-9",
+              scrolled
+                ? "translate-y-1 md:translate-y-1.5"
+                : "-translate-y-0.5 md:-translate-y-1"
             )}
           >
             Get Started
