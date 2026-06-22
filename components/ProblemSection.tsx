@@ -1,10 +1,10 @@
-import Image from "next/image";
 import {
   AlertCircle,
   Clock,
   FileText,
   Frown,
 } from "lucide-react";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SiteContainer } from "@/components/SiteContainer";
 
 const painPoints = [
@@ -37,21 +37,26 @@ const painPoints = [
 export function ProblemSection() {
   return (
     <section id="problem" className="bg-brand-white py-20 sm:py-28">
-      <SiteContainer>
+      <SiteContainer className="max-md:!pl-4">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-11 xl:gap-14">
-          <div>
+          <div className="lg:col-span-2">
             <div className="mb-6 inline-block -skew-x-12 bg-brand-navy px-4 py-1 sm:px-5">
               <span className="font-display inline-block skew-x-12 text-[10px] font-bold uppercase leading-none tracking-[0.15em] text-white sm:text-xs md:text-sm">
                 The Problem
               </span>
             </div>
             <h2 className="font-display text-3xl font-bold uppercase leading-[1.1] tracking-tighter sm:text-4xl lg:text-5xl">
-              <span className="block text-brand-slate">
+              <span className="block text-brand-slate md:whitespace-nowrap">
                 Sound Familiar? The Struggle of an
               </span>
-              <span className="block text-brand-aqua">Independent Operator</span>
+              <span className="block text-brand-aqua md:whitespace-nowrap">
+                Independent Operator
+              </span>
             </h2>
-            <p className="mt-6 border-l-2 border-brand-aqua pl-3 text-base text-brand-navy sm:pl-4 sm:text-lg">
+          </div>
+
+          <div>
+            <p className="border-l-2 border-brand-aqua pl-3 text-base text-brand-navy sm:pl-4 sm:text-lg">
               You got into the trucking business for freedom and profit, but
               instead you&apos;re finding yourself acting as a full-time
               secretary, negotiator, and dispatcher.
@@ -82,14 +87,14 @@ export function ProblemSection() {
             </div>
           </div>
 
-          <div className="flex min-h-[520px] flex-col overflow-hidden border-8 border-brand-white shadow-[0_8px_32px_rgba(11,19,43,0.12)] sm:min-h-[580px] lg:mt-[12rem] lg:min-h-0 lg:h-auto">
+          <div className="flex min-h-[520px] flex-col overflow-hidden border-8 border-brand-white shadow-[0_8px_32px_rgba(11,19,43,0.12)] sm:min-h-[580px] lg:min-h-0 lg:h-auto">
             <div className="relative min-h-[320px] w-full flex-1 sm:min-h-[380px] lg:max-h-[45%]">
-              <Image
-                src="/1009.png"
+              <ResponsiveImage
+                base="1009"
                 alt="stressed truck driver in cab"
-                fill
-                className="object-cover object-center grayscale"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                widths={[640]}
+                className="object-center grayscale"
               />
               <div
                 className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 from-5% via-brand-navy/35 via-45% to-transparent to-80%"

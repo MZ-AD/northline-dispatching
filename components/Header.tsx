@@ -86,7 +86,7 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
           >
             <button
               type="button"
-              className="flex h-11 w-11 items-center justify-center text-white md:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-none bg-brand-aqua text-white md:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}

@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        stats: "1200px",
+      },
       colors: {
         "brand-aqua": "#00AEEF",
         "brand-aqua-dark": "#0095D6",

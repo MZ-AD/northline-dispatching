@@ -67,36 +67,36 @@ export function StatsBar() {
       <SiteContainer>
         <div className="relative mx-auto w-full max-w-7xl rounded-xl shadow-[0_0_26px_rgba(11,19,43,0.1)]">
           <div className="relative overflow-hidden rounded-xl bg-brand-white">
-            <div className="relative z-10 max-lg:grid max-lg:grid-cols-2 max-lg:divide-x-2 max-lg:divide-y-2 max-lg:divide-brand-aqua lg:flex lg:flex-row lg:items-stretch">
-              <div className="max-lg:contents lg:flex lg:flex-[0_0_65%] lg:divide-x-2 lg:divide-brand-aqua">
+            <div className="relative z-10 max-stats:grid max-stats:grid-cols-2 max-stats:divide-x-2 max-stats:divide-y-2 max-stats:divide-brand-aqua stats:flex stats:flex-row stats:items-stretch">
+              <div className="max-stats:contents stats:flex stats:flex-[0_0_65%] stats:divide-x-2 stats:divide-brand-aqua">
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex min-w-0 flex-col items-center justify-center px-4 py-7 text-center max-lg:px-5 max-lg:py-8 sm:max-lg:px-6 lg:px-14 lg:py-[58px] xl:px-16"
+                    className="flex min-w-0 flex-col items-center justify-center px-4 py-7 text-center max-stats:px-5 max-stats:py-8 sm:max-stats:px-6 stats:px-14 stats:py-[58px] xl:px-16"
                   >
-                    <p className="whitespace-pre-line text-xs font-extrabold uppercase leading-[1.35] tracking-[0.1em] text-brand-navy max-lg:text-[11px] sm:max-lg:text-sm lg:text-base">
+                    <p className="whitespace-pre-line text-xs font-extrabold uppercase leading-[1.35] tracking-[0.1em] text-brand-navy max-stats:text-[11px] sm:max-stats:text-sm stats:text-base">
                       {stat.label}
                     </p>
-                    <p className="mt-3 text-[2rem] font-extrabold leading-none text-brand-slate max-lg:mt-2 sm:max-lg:text-4xl lg:mt-5 lg:text-[58px]">
+                    <p className="mt-3 text-[2rem] font-extrabold leading-none text-brand-slate max-stats:mt-2 sm:max-stats:text-4xl stats:mt-5 stats:text-[58px]">
                       {stat.value}
                     </p>
                     <span
-                      className="mt-3 block h-0.5 w-[30px] bg-brand-aqua max-lg:mt-2 lg:mt-4"
+                      className="mt-3 block h-0.5 w-[30px] bg-brand-aqua max-stats:mt-2 stats:mt-4"
                       aria-hidden="true"
                     />
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-col items-center justify-center px-4 py-7 max-lg:px-5 max-lg:py-8 sm:max-lg:px-6 lg:flex-1 lg:py-[34px] lg:px-8">
-                <div className="flex w-full max-w-[300px] flex-col items-center gap-3 max-lg:max-w-none lg:gap-9">
-                  <h3 className="text-center text-lg font-extrabold uppercase leading-tight tracking-tight text-brand-slate max-lg:text-base sm:max-lg:text-xl lg:text-3xl lg:text-[34px]">
+              <div className="flex flex-col items-center justify-center px-4 py-7 max-stats:px-5 max-stats:py-8 sm:max-stats:px-6 stats:flex-1 stats:py-[34px] stats:px-8">
+                <div className="flex w-full max-w-[300px] flex-col items-center gap-3 max-stats:max-w-none stats:gap-9">
+                  <h3 className="text-center text-lg font-extrabold uppercase leading-tight tracking-tight text-brand-slate max-stats:text-base sm:max-stats:text-xl stats:text-3xl stats:text-[34px]">
                     Our Service Fee
                   </h3>
-                  <div className="w-full lg:hidden">
+                  <div className="w-full stats:hidden">
                     <FeesCard compact />
                   </div>
-                  <div className="hidden w-full lg:block">
+                  <div className="hidden w-full stats:block">
                     <FeesCard />
                   </div>
                 </div>
@@ -104,15 +104,15 @@ export function StatsBar() {
             </div>
 
             <div
-              className="absolute bottom-0 left-0 z-20 h-1.5 w-full bg-brand-aqua lg:hidden"
+              className="absolute bottom-0 left-0 z-20 h-1.5 w-full bg-brand-aqua stats:hidden"
               aria-hidden="true"
             />
             <div
-              className="absolute bottom-0 left-0 z-20 hidden h-2 w-[65%] bg-brand-aqua lg:block"
+              className="absolute bottom-0 left-0 z-20 hidden h-2 w-[65%] bg-brand-aqua stats:block"
               aria-hidden="true"
             />
             <div
-              className="absolute bottom-0 left-[65%] top-0 z-30 hidden origin-bottom bg-brand-aqua lg:block"
+              className="absolute bottom-0 left-[65%] top-0 z-30 hidden origin-bottom bg-brand-aqua stats:block"
               style={{
                 width: "6px",
                 clipPath: "polygon(0 0, 100% 100%, 0 100%)",
@@ -122,7 +122,7 @@ export function StatsBar() {
             />
           </div>
           <div
-            className="pointer-events-none absolute hidden bg-brand-aqua lg:block"
+            className="pointer-events-none absolute hidden bg-brand-aqua stats:block"
             style={{
               left: "calc(65.7% - 33%)",
               width: "33%",

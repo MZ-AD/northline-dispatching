@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Check } from "lucide-react";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SiteContainer } from "@/components/SiteContainer";
 
 const benefits = [
@@ -73,12 +73,12 @@ export function WhyChooseUs() {
             />
             <div className="relative border-4 border-brand-aqua bg-brand-white">
               <div className="relative aspect-[8/9] w-full">
-                <Image
-                  src="/happy.png"
+                <ResponsiveImage
+                  base="happy"
                   alt="Smiling truck driver"
-                  fill
-                  className="object-cover object-center sepia-[0.35] saturate-[0.85]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  widths={[480, 768]}
+                  className="object-center sepia-[0.35] saturate-[0.85]"
                 />
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-brand-navy/95 from-5% via-brand-navy/45 via-40% to-transparent to-75%"

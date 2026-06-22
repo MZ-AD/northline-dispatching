@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="border-t-[8px] border-brand-aqua bg-brand-navy text-white">
       <SiteContainer className="pt-12 pb-6 sm:pt-14 sm:pb-8">
-        <div className="grid gap-10 md:grid-cols-3 md:gap-12 lg:gap-16">
+        <div className="grid gap-10 md:grid-cols-[1.35fr_0.75fr_0.9fr] md:items-start md:gap-x-16 lg:gap-x-24 xl:gap-x-32">
           <div>
             <Logo />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/70 sm:text-[15px]">
@@ -23,7 +23,7 @@ export function Footer() {
           </div>
 
           <div className="grid grid-cols-2 gap-6 md:contents">
-            <div className="flex flex-col items-start pl-3 text-left md:items-center md:pl-0 md:text-center">
+            <div className="flex flex-col items-start pl-3 text-left md:pl-0">
               <h3 className="font-display text-base font-bold uppercase tracking-[0.12em] text-white [word-spacing:0.2em] sm:text-lg">
                 Quick Links
               </h3>
@@ -41,7 +41,7 @@ export function Footer() {
               </ul>
             </div>
 
-            <div className="flex flex-col items-start pr-3 text-left md:pr-0">
+            <div className="flex flex-col items-start pr-3 text-left md:pr-8 lg:pr-12 xl:pr-16">
               <h3 className="font-display text-base font-bold uppercase tracking-[0.12em] text-white [word-spacing:0.2em] sm:text-lg">
                 Contact
               </h3>
