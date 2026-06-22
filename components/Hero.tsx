@@ -65,17 +65,11 @@ export function Hero() {
           </h1>
         </div>
 
-        <div className="mt-8 max-w-3xl text-left">
-          <div className="relative flex max-w-2xl items-start sm:max-w-3xl lg:max-w-4xl">
-            <span
-              className="absolute bottom-5 -left-5 h-1.5 w-1.5 shrink-0 bg-[#F17A28] sm:bottom-6 sm:-left-7 md:bottom-7 md:-left-8"
-              aria-hidden="true"
-            />
-            <p className="border-l-2 border-[#F17A28]/60 pl-3 text-sm leading-relaxed text-white/70 sm:pl-5 sm:text-xl md:text-2xl">
-              Stop fighting with brokers. Our dispatchers negotiate the highest
-              rates so you can focus on the road.
-            </p>
-          </div>
+        <div className="mt-3 max-w-3xl text-left sm:mt-4">
+          <p className="max-w-2xl border-l-2 border-[#F17A28]/60 pl-3 text-sm leading-relaxed text-white/70 sm:max-w-3xl sm:pl-5 sm:text-xl md:text-2xl lg:max-w-4xl">
+            Stop fighting with brokers. Our dispatchers negotiate the highest
+            rates so you can focus on the road.
+          </p>
 
           <div className="mt-8 sm:mt-10">
             <Button
@@ -86,9 +80,9 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="mt-8 border-t border-white/10" />
+          <div className="mt-10 border-t border-white/10 sm:mt-12" />
 
-          <ul className="mt-8 grid grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-2">
+          <ul className="mt-10 grid grid-cols-1 gap-x-5 gap-y-5 sm:max-w-xl sm:grid-cols-2 sm:mt-12 sm:gap-x-7">
             {features.map((feature) => (
               <li key={feature.label} className="group flex items-center gap-3">
                 <FeatureIcon icon={feature.icon} />
