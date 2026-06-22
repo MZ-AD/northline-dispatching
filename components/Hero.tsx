@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
@@ -8,6 +9,7 @@ import {
 } from "lucide-react";
 import { SiteContainer } from "@/components/SiteContainer";
 import { Button } from "@/components/ui/button";
+import { GET_STARTED_PATH } from "@/lib/routes";
 
 const features = [
   { icon: ShieldCheck, label: "Dedicated Agent" },
@@ -73,10 +75,13 @@ export function Hero() {
 
           <div className="mt-8 sm:mt-10">
             <Button
+              asChild
               className="group h-16 w-full max-w-[345px] rounded-none px-10 text-base font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none sm:h-[88px] sm:px-12 sm:text-lg md:h-[94px] md:min-w-[345px] md:text-xl"
             >
-              Book a Free Call
-              <ArrowRight className="h-5 w-5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2 sm:h-6 sm:w-6" />
+              <Link href={GET_STARTED_PATH}>
+                Book a Free Call
+                <ArrowRight className="h-5 w-5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2 sm:h-6 sm:w-6" />
+              </Link>
             </Button>
           </div>
 

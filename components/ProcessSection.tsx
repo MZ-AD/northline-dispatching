@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { SiteContainer } from "@/components/SiteContainer";
 import { Button } from "@/components/ui/button";
+import { GET_STARTED_PATH } from "@/lib/routes";
 
 const steps = [
   {
@@ -87,8 +89,11 @@ export function ProcessSection() {
         </div>
 
         <div className="mt-14 text-center sm:mt-16">
-          <Button className="font-display h-14 rounded-none px-7 text-sm font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] sm:h-[76px] sm:px-9 sm:text-base sm:shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] sm:hover:translate-x-[4px] sm:hover:translate-y-[4px] sm:active:translate-x-[4px] sm:active:translate-y-[4px] md:text-lg">
-            Book a Free Call
+          <Button
+            asChild
+            className="font-display h-14 rounded-none px-7 text-sm font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] sm:h-[76px] sm:px-9 sm:text-base sm:shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] sm:hover:translate-x-[4px] sm:hover:translate-y-[4px] sm:active:translate-x-[4px] sm:active:translate-y-[4px] md:text-lg"
+          >
+            <Link href={GET_STARTED_PATH}>Book a Free Call</Link>
           </Button>
         </div>
       </SiteContainer>

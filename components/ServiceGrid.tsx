@@ -6,8 +6,10 @@ import {
   Search,
   TrendingUp,
 } from "lucide-react";
+import Link from "next/link";
 import { SiteContainer } from "@/components/SiteContainer";
 import { Button } from "@/components/ui/button";
+import { GET_STARTED_PATH } from "@/lib/routes";
 
 const services = [
   {
@@ -119,10 +121,11 @@ export function ServiceGrid() {
                 Stop leaving money on the table.
               </p>
               <Button
+                asChild
                 variant="white"
                 className="font-display mt-8 h-16 w-full rounded-none text-base font-bold uppercase leading-tight tracking-[0.15em] sm:mt-10 sm:h-[72px] sm:text-lg"
               >
-                Book a Free Call
+                <Link href={GET_STARTED_PATH}>Book a Free Call</Link>
               </Button>
             </div>
           </article>
