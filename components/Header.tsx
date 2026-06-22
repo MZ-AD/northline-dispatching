@@ -83,16 +83,20 @@ export function Header() {
             ))}
           </nav>
 
-          <Button
+          <div
             className={cn(
-              "ml-auto h-12 min-w-[112px] shrink-0 translate-x-1 rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[11px] hover:-translate-y-[3px] hover:bg-white hover:text-black hover:shadow-none active:translate-x-[11px] active:-translate-y-[3px] active:bg-white active:text-black active:shadow-none md:h-[72px] md:min-w-[142px] md:translate-x-2 md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] md:hover:translate-x-[15px] md:hover:-translate-y-1 md:active:translate-x-[15px] md:active:-translate-y-1 lg:h-[79px] lg:min-w-[158px] lg:px-9",
+              "ml-auto shrink-0 translate-x-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:translate-x-2",
               scrolled
-                ? "translate-y-1 md:translate-y-1.5"
+                ? "translate-y-0"
                 : "-translate-y-0.5 md:-translate-y-1"
             )}
           >
-            Get Started
-          </Button>
+            <Button
+              className="h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-white hover:text-black hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] active:bg-white active:text-black active:shadow-none md:h-[72px] md:min-w-[142px] md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] md:hover:translate-x-[4px] md:hover:translate-y-[4px] md:active:translate-x-[4px] md:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
+            >
+              Get Started
+            </Button>
+          </div>
         </SiteContainer>
       </div>
 
