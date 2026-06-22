@@ -4,9 +4,9 @@ import { Header } from "@/components/Header";
 import { GetStartedContent } from "@/components/get-started/GetStartedContent";
 
 export const metadata: Metadata = {
-  title: "Get Started | Sam Anderson Dispatch",
+  title: "Get Started | Baywood Dispatch",
   description:
-    "Apply to work with Sam Anderson Dispatch. We partner exclusively with owner-operators under their own MC authority.",
+    "Apply to work with Baywood Dispatch. We partner exclusively with owner-operators under their own MC authority.",
 };
 
 export default function GetStartedPage() {

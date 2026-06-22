@@ -29,8 +29,8 @@ const stepTitleClassName =
 
 function StepNumber({ number }: { number: string }) {
   return (
-    <div className="group relative z-10 flex h-[88px] w-[84px] -skew-x-12 items-center justify-center border-4 border-slate-200 bg-brand-white transition-colors duration-300 hover:border-brand-aqua sm:h-[96px] sm:w-[96px]">
-      <span className="skew-x-12 font-sans text-[1.85rem] font-bold leading-none tracking-[-0.03em] text-brand-aqua transition-colors duration-300 group-hover:text-brand-slate sm:text-[2.1rem]">
+    <div className="group relative z-10 flex h-[68px] w-[64px] -skew-x-12 items-center justify-center border-2 border-slate-200 bg-brand-white transition-colors duration-300 hover:border-brand-aqua md:h-[96px] md:w-[96px] md:border-4">
+      <span className="skew-x-12 font-sans text-[1.35rem] font-bold leading-none tracking-[-0.03em] text-brand-aqua transition-colors duration-300 group-hover:text-brand-slate md:text-[2.1rem]">
         {number}
       </span>
     </div>
@@ -40,7 +40,7 @@ function StepNumber({ number }: { number: string }) {
 export function ProcessSection() {
   return (
     <section id="process" className="bg-brand-white py-20 sm:py-28">
-      <SiteContainer>
+      <SiteContainer className="max-md:!px-4 sm:max-md:!px-6">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 inline-block -skew-x-12 bg-brand-navy px-4 py-1 sm:px-5">
             <span className="font-display inline-block skew-x-12 text-[10px] font-bold uppercase leading-none tracking-[0.15em] text-white sm:text-xs md:text-sm">
@@ -67,7 +67,7 @@ export function ProcessSection() {
               {steps.map((step) => (
                 <article
                   key={step.number}
-                  className="flex flex-col items-center text-center"
+                  className="flex flex-col items-center rounded border border-slate-200 bg-brand-white px-6 py-8 text-center shadow-[0_2px_12px_rgba(11,19,43,0.06)] md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none"
                 >
                   <StepNumber number={step.number} />
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { SiteContainer } from "@/components/SiteContainer";
+import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { GET_STARTED_PATH } from "@/lib/routes";
 import { cn } from "@/lib/utils";
@@ -14,31 +15,6 @@ const navLinks = [
   { label: "Benefits", href: "#benefits", pageHref: "/#benefits" },
   { label: "How It Works", href: "#process", pageHref: "/#process" },
 ];
-
-export function Logo({ className = "", compact = false }: { className?: string; compact?: boolean }) {
-  return (
-    <Link href="/" className={cn("flex min-w-0 items-center", className)}>
-      <div className="flex min-w-0 flex-col leading-none">
-        <span
-          className={cn(
-            "truncate font-bold tracking-wide text-white transition-all duration-500",
-            compact ? "text-base sm:text-lg" : "text-lg sm:text-xl"
-          )}
-        >
-          SAM ANDERSON
-        </span>
-        <span
-          className={cn(
-            "mt-0.5 font-bold uppercase tracking-[0.25em] text-brand-aqua sm:mt-1 sm:tracking-[0.3em]",
-            compact ? "text-[11px] sm:text-xs" : "text-xs sm:text-sm"
-          )}
-        >
-          Dispatch
-        </span>
-      </div>
-    </Link>
-  );
-}
 
 export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
   const [scrolled, setScrolled] = useState(false);
@@ -119,7 +95,7 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
             </button>
             <Button
               asChild
-              className="h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] md:h-[72px] md:min-w-[142px] md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] md:hover:translate-x-[4px] md:hover:translate-y-[4px] md:active:translate-x-[4px] md:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
+              className="hidden h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] md:inline-flex md:h-[72px] md:min-w-[142px] md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] md:hover:translate-x-[4px] md:hover:translate-y-[4px] md:active:translate-x-[4px] md:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
             >
               <Link href={GET_STARTED_PATH}>Get Started</Link>
             </Button>
@@ -140,6 +116,14 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
                 {link.label}
               </Link>
             ))}
+            <Button
+              asChild
+              className="mt-4 h-12 w-full rounded-none text-xs font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)]"
+            >
+              <Link href={GET_STARTED_PATH} onClick={() => setMobileOpen(false)}>
+                Get Started
+              </Link>
+            </Button>
           </SiteContainer>
         </nav>
       )}

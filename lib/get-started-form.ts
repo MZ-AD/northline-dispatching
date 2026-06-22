@@ -75,7 +75,7 @@ export async function submitGetStartedForm(
       },
       body: JSON.stringify({
         access_key: accessKey,
-        subject: "New Get Started Application — Sam Anderson Dispatch",
+        subject: "New Get Started Application — Baywood Dispatch",
         from_name: data.fullName,
         name: data.fullName,
         email: data.email,

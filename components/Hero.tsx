@@ -10,6 +10,7 @@ import {
 import { SiteContainer } from "@/components/SiteContainer";
 import { Button } from "@/components/ui/button";
 import { GET_STARTED_PATH } from "@/lib/routes";
+import { cn } from "@/lib/utils";
 
 const features = [
   { icon: ShieldCheck, label: "Dedicated Agent" },
@@ -20,10 +21,19 @@ const features = [
 
 function FeatureIcon({ icon: Icon }: { icon: typeof ShieldCheck }) {
   return (
-    <span className="flex h-10 w-10 shrink-0 -skew-x-12 items-center justify-center border border-brand-aqua bg-brand-navy transition-all duration-300 group-hover:border-brand-aqua group-hover:bg-brand-aqua">
+    <span
+      className={cn(
+        "flex h-10 w-10 shrink-0 items-center justify-center transition-all duration-300",
+        "max-md:-skew-x-12 max-md:bg-brand-aqua max-md:shadow-[2px_2px_0_0_rgba(0,0,0,0.25)]",
+        "md:-skew-x-12 md:border md:border-brand-aqua md:bg-brand-navy md:group-hover:border-brand-aqua md:group-hover:bg-brand-aqua"
+      )}
+    >
       <Icon
-        className="h-4 w-4 skew-x-12 text-brand-aqua transition-all duration-300 group-hover:text-white"
-        strokeWidth={2.5}
+        className={cn(
+          "h-4 w-4 stroke-[2.5] transition-all duration-300",
+          "max-md:skew-x-12 max-md:text-white",
+          "md:skew-x-12 md:text-brand-aqua md:group-hover:text-white"
+        )}
       />
     </span>
   );
@@ -31,17 +41,17 @@ function FeatureIcon({ icon: Icon }: { icon: typeof ShieldCheck }) {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy pt-[80px] sm:pt-[108px] md:pt-[120px]">
+    <section className="relative overflow-hidden bg-brand-navy pt-[72px] sm:pt-[108px] md:pt-[120px]">
       <div className="absolute inset-0 z-0">
         <Image
           src="/44.jpg"
           alt="Trucks on highway"
           fill
           priority
-          className="object-cover object-[center_28%]"
+          className="object-cover object-[center_75%] md:object-[center_28%]"
         />
-        <div className="absolute inset-0 z-10 bg-brand-navy/70" />
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-transparent" />
+        <div className="absolute inset-0 z-10 bg-brand-navy/75 md:bg-brand-navy/70" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-brand-navy/95 via-brand-navy/80 to-brand-navy/45 md:bg-gradient-to-r md:from-brand-navy md:via-brand-navy/85 md:to-transparent" />
         <div
           className="absolute inset-0 z-10 opacity-[0.07]"
           style={{
@@ -51,32 +61,43 @@ export function Hero() {
         />
       </div>
 
-      <SiteContainer className="relative z-20 py-20 lg:py-28">
+      <SiteContainer className="relative z-20 py-10 sm:py-20 lg:py-28">
         <div className="max-w-6xl text-left lg:max-w-7xl">
-          <div className="mb-6 inline-block -skew-x-12 bg-brand-aqua px-5 py-2">
-            <span className="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.15em] text-white sm:text-sm">
+          <div className="hidden -skew-x-12 bg-brand-aqua px-5 py-2 lg:mb-6 lg:inline-block">
+            <span className="inline-block skew-x-12 text-[10px] font-bold uppercase tracking-[0.15em] text-white sm:text-sm">
               Premium Logistics
             </span>
           </div>
 
-          <h1 className="font-display text-5xl font-bold uppercase leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
-            <span className="block whitespace-nowrap text-white">
+          {/* Mobile & tablet: 2-line headline like reference */}
+          <h1 className="font-display font-bold uppercase tracking-tighter lg:hidden">
+            <span className="block whitespace-nowrap text-[clamp(1.65rem,7.8vw,3rem)] leading-[0.92] text-white">
               We Keep Your Truck
             </span>
-            <span className="block text-brand-aqua">Moving &amp; Earning.</span>
+            <span className="mt-1 block whitespace-nowrap text-[clamp(1.65rem,7.8vw,3rem)] leading-[0.92] text-brand-aqua">
+              Moving &amp; Earning.
+            </span>
+          </h1>
+
+          {/* Desktop: 4-line headline */}
+          <h1 className="font-display hidden text-6xl font-bold uppercase leading-[0.88] tracking-tighter lg:block lg:text-7xl lg:leading-none xl:text-8xl">
+            <span className="block text-white">We Keep Your</span>
+            <span className="block text-white">Truck</span>
+            <span className="block text-brand-aqua">Moving &amp;</span>
+            <span className="block text-brand-aqua">Earning.</span>
           </h1>
         </div>
 
-        <div className="mt-3 max-w-3xl text-left sm:mt-4">
-          <p className="max-w-2xl border-l-2 border-brand-aqua/60 pl-3 text-sm leading-relaxed text-white/70 sm:max-w-3xl sm:pl-5 sm:text-xl md:text-2xl lg:max-w-4xl">
+        <div className="mt-5 max-w-3xl text-left sm:mt-4 md:mt-3">
+          <p className="max-w-2xl border-l-2 border-brand-aqua pl-3 text-[15px] leading-relaxed text-white/75 sm:max-w-3xl sm:pl-5 sm:text-xl md:text-2xl lg:max-w-4xl">
             Stop fighting with brokers. Our dispatchers negotiate the highest
             rates so you can focus on the road.
           </p>
 
-          <div className="mt-8 sm:mt-10">
+          <div className="mt-6 sm:mt-10">
             <Button
               asChild
-              className="group h-16 w-full max-w-[345px] rounded-none px-10 text-base font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none sm:h-[88px] sm:px-12 sm:text-lg md:h-[94px] md:min-w-[345px] md:text-xl"
+              className="group h-[60px] w-full max-w-none rounded-none px-6 text-sm font-bold uppercase tracking-[0.15em] shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] sm:h-[88px] sm:max-w-[345px] sm:px-12 sm:text-lg md:h-[94px] md:min-w-[345px] md:text-xl"
             >
               <Link href={GET_STARTED_PATH}>
                 Book a Free Call
@@ -85,13 +106,13 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="mt-10 border-t border-white/10 sm:mt-12" />
+          <div className="mt-8 border-t border-white/10 sm:mt-12" />
 
-          <ul className="mt-10 grid grid-cols-1 gap-x-5 gap-y-5 sm:max-w-xl sm:grid-cols-2 sm:mt-12 sm:gap-x-7">
+          <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-5 sm:mt-12 sm:max-w-xl sm:gap-x-7 sm:gap-y-6">
             {features.map((feature) => (
-              <li key={feature.label} className="group flex items-center gap-3">
+              <li key={feature.label} className="group flex items-center gap-2.5 sm:gap-3">
                 <FeatureIcon icon={feature.icon} />
-                <span className="text-sm font-bold uppercase tracking-wide text-white sm:text-base">
+                <span className="text-[11px] font-bold uppercase leading-tight tracking-wide text-white min-[400px]:text-xs sm:text-base">
                   {feature.label}
                 </span>
               </li>

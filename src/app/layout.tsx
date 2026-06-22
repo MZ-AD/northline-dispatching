@@ -20,9 +20,17 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Sam Anderson Dispatch | Truck Dispatch Service | Higher Paying Loads",
+  title: "Baywood Dispatch | Truck Dispatch Service | Higher Paying Loads",
   description:
     "Stop fighting with brokers. Our dispatchers negotiate the highest rates so you can focus on the road.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.svg",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

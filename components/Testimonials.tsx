@@ -4,21 +4,24 @@ import { SiteContainer } from "@/components/SiteContainer";
 const testimonials = [
   {
     quote:
-      "I was about to sell my truck before I found these guys. Now I'm netting $2k more a week and I actually get to see my family on the weekends. Best decision I ever made.",
-    name: "Marcus T.",
-    title: "Owner-Operator (Dry Van)",
+      "Baywood takes a lot of stress off my plate. They handle the load planning, paperwork, and communication so I can stay focused on the road. The whole team has been great from day one.",
+    name: "James R.",
+    initials: "JR",
+    role: "Owner-Operator • Dry Van",
   },
   {
     quote:
-      "Having a dedicated dispatcher who actually fights for my rates changed everything. They handle all the annoying paperwork so I can just focus on expanding my fleet.",
-    name: "David R.",
-    title: "Fleet Owner (3 Trucks)",
+      "What I like most about Baywood is how reliable they are. I never have to chase anyone down for updates, and they always keep things moving smoothly. It's been a great experience working with them.",
+    name: "Shawn M.",
+    initials: "SM",
+    role: "Owner-Operator • Reefer",
   },
   {
     quote:
-      "No forced dispatch is real here. If I don't like a load, we don't take it. But honestly, the freight they find is so good I rarely ever turn it down. Highly recommended.",
-    name: "Michael T.",
-    title: "Independent Driver (Flatbed)",
+      "Baywood feels more like a partner than just a dispatch company. They're easy to work with, always professional, and genuinely want to see carriers succeed. I highly recommend them.",
+    name: "Chris W.",
+    initials: "CW",
+    role: "Owner-Operator • Flatbed",
   },
 ];
 
@@ -28,7 +31,7 @@ function StarRating() {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className="h-5 w-5 fill-brand-aqua text-brand-aqua"
+          className="h-4 w-4 fill-brand-aqua text-brand-aqua sm:h-5 sm:w-5"
         />
       ))}
     </div>
@@ -60,21 +63,26 @@ export function Testimonials() {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.name}
-              className="flex h-full flex-col border-t-4 border-brand-aqua bg-brand-white p-8 shadow-[0_8px_24px_rgba(11,19,43,0.08)] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_16px_36px_rgba(11,19,43,0.12)] sm:p-10"
+              className="flex h-full flex-col rounded-2xl bg-brand-aqua/[0.08] p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(11,19,43,0.1)] sm:p-9"
             >
               <StarRating />
 
-              <blockquote className="mt-6 flex-1 text-base italic leading-relaxed text-brand-navy sm:mt-7 sm:text-[17px] md:text-lg">
-                &ldquo;{testimonial.quote}&rdquo;
+              <blockquote className="mt-5 flex-1 text-sm italic leading-relaxed text-brand-navy sm:mt-6 sm:text-[15px] md:text-base">
+                {testimonial.quote}
               </blockquote>
 
-              <div className="mt-8 border-t border-slate-200 pt-5">
-                <p className="text-base font-bold uppercase tracking-wide text-brand-slate sm:text-lg">
-                  {testimonial.name}
-                </p>
-                <p className="mt-1 text-sm font-normal uppercase tracking-wide text-brand-aqua sm:text-base">
-                  {testimonial.title}
-                </p>
+              <div className="mt-8 flex items-center gap-3">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-navy text-sm font-bold text-white">
+                  {testimonial.initials}
+                </span>
+                <div>
+                  <p className="text-base font-bold text-brand-slate sm:text-[17px]">
+                    {testimonial.name}
+                  </p>
+                  <p className="mt-0.5 text-sm text-brand-navy/70">
+                    {testimonial.role}
+                  </p>
+                </div>
               </div>
             </article>
           ))}

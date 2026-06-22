@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 statsbar-*.png
+public/favicon-32.png
 
 # debug
 npm-debug.log*

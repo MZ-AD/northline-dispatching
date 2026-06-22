@@ -57,23 +57,23 @@ export function ProblemSection() {
               secretary, negotiator, and dispatcher.
             </p>
 
-            <div className="mt-10 space-y-4 sm:mt-12 sm:space-y-5">
+            <div className="mt-10 space-y-6 sm:mt-12 sm:space-y-7">
               {painPoints.map((point) => (
                 <div
                   key={point.title}
-                  className="flex min-h-[112px] items-center gap-4 border border-slate-200 border-l-[5px] border-l-brand-aqua bg-brand-white px-4 py-4 shadow-[0_2px_12px_rgba(11,19,43,0.06)] sm:gap-6 sm:px-6 lg:h-[112px]"
+                  className="flex min-h-[128px] items-start gap-4 border border-slate-200 border-l-[5px] border-l-brand-aqua bg-brand-white px-4 py-6 shadow-[0_2px_12px_rgba(11,19,43,0.06)] transition-shadow duration-300 ease-out hover:shadow-[0_8px_24px_rgba(11,19,43,0.12)] sm:items-center sm:gap-6 sm:px-6 sm:py-7 lg:min-h-[132px]"
                 >
-                  <div className="flex h-12 w-12 shrink-0 -skew-x-12 items-center justify-center bg-brand-aqua/10 sm:h-14 sm:w-14">
+                  <div className="mt-[-2px] flex h-12 w-12 shrink-0 -skew-x-12 items-center justify-center bg-brand-aqua/10 sm:mt-0 sm:h-14 sm:w-14">
                     <point.icon
                       className="h-5 w-5 skew-x-12 text-brand-aqua sm:h-6 sm:w-6"
                       strokeWidth={1.75}
                     />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="font-display text-lg font-bold uppercase leading-tight tracking-tight text-brand-slate sm:text-xl lg:text-2xl">
+                    <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight text-brand-slate sm:text-xl lg:text-2xl">
                       {point.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-snug text-brand-navy sm:text-[15px] lg:text-base">
+                    <p className="mt-2.5 text-sm font-light leading-relaxed text-brand-navy sm:mt-3 sm:text-[15px] lg:text-base">
                       {point.description}
                     </p>
                   </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SiteContainer } from "@/components/SiteContainer";
-import { Logo } from "@/components/Header";
+import { Logo } from "@/components/Logo";
 
 const quickLinks = [
   { label: "How It Works", href: "#process" },
@@ -22,40 +22,42 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center text-center md:items-center">
-            <h3 className="font-display text-base font-bold uppercase tracking-[0.12em] text-white [word-spacing:0.2em] sm:text-lg">
-              Quick Links
-            </h3>
-            <ul className="mt-5 space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-brand-aqua sm:text-[15px]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid grid-cols-2 gap-6 md:contents">
+            <div className="flex flex-col items-start pl-3 text-left md:items-center md:pl-0 md:text-center">
+              <h3 className="font-display text-base font-bold uppercase tracking-[0.12em] text-white [word-spacing:0.2em] sm:text-lg">
+                Quick Links
+              </h3>
+              <ul className="mt-5 space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/70 transition-colors hover:text-brand-aqua sm:text-[15px]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="font-display text-base font-bold uppercase tracking-[0.12em] text-white [word-spacing:0.2em] sm:text-lg">
-              Contact
-            </h3>
-            <Link
-              href="mailto:info@baywooddispatch.com"
-              className="mt-5 inline-block text-sm text-white/70 transition-colors hover:text-brand-aqua sm:text-[15px]"
-            >
-              info@baywooddispatch.com
-            </Link>
+            <div className="flex flex-col items-start pr-3 text-left md:pr-0">
+              <h3 className="font-display text-base font-bold uppercase tracking-[0.12em] text-white [word-spacing:0.2em] sm:text-lg">
+                Contact
+              </h3>
+              <Link
+                href="mailto:info@baywooddispatch.com"
+                className="mt-5 inline-block text-sm text-white/70 transition-colors hover:text-brand-aqua sm:text-[15px]"
+              >
+                info@baywooddispatch.com
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p className="text-xs uppercase tracking-wide text-white/70">
-            &copy; {new Date().getFullYear()} Sam Anderson Dispatch.
+            &copy; {new Date().getFullYear()} Baywood Dispatch.
           </p>
           <div className="flex gap-6">
             <Link
