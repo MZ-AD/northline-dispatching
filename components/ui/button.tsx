@@ -5,18 +5,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-aqua focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-[#F17A28] text-white hover:bg-[#d96a1f]",
+        default: "bg-brand-aqua text-white hover:bg-brand-aqua-dark",
         outline:
           "border border-white/30 bg-transparent text-white hover:bg-white/10",
-        secondary:
-          "bg-[#0B1C2E] text-white hover:bg-[#132a42]",
-        ghost: "hover:bg-white/10 text-white",
-        link: "text-[#F17A28] underline-offset-4 hover:underline",
-        white: "bg-white text-[#0B1C2E] hover:bg-gray-100",
+        secondary: "bg-brand-navy text-white hover:bg-brand-slate",
+        ghost: "text-white hover:bg-white/10",
+        link: "text-brand-aqua underline-offset-4 hover:underline",
+        white: "bg-brand-white text-brand-navy hover:bg-gray-100",
       },
       size: {
         default: "h-11 px-6 py-2",

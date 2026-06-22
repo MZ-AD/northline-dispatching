@@ -28,7 +28,7 @@ export function Logo({ className = "", compact = false }: { className?: string; 
         </span>
         <span
           className={cn(
-            "mt-0.5 font-bold uppercase tracking-[0.25em] text-[#F17A28] sm:mt-1 sm:tracking-[0.3em]",
+            "mt-0.5 font-bold uppercase tracking-[0.25em] text-brand-aqua sm:mt-1 sm:tracking-[0.3em]",
             compact ? "text-[11px] sm:text-xs" : "text-xs sm:text-sm"
           )}
         >
@@ -63,9 +63,9 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
         scrolled
-          ? "bg-[#0B3C5D] pt-0"
+          ? "bg-brand-navy pt-0"
           : mobileOpen
-            ? "bg-[#0B3C5D] pt-2 sm:pt-3"
+            ? "bg-brand-navy pt-2 sm:pt-3"
             : "bg-transparent pt-2 sm:pt-3 md:pt-4"
       )}
     >
@@ -88,7 +88,7 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.125em] text-white transition-colors hover:text-[#F17A28] lg:text-sm"
+                className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.125em] text-white transition-colors hover:text-brand-aqua lg:text-sm"
               >
                 {link.label}
               </Link>
@@ -113,7 +113,7 @@ export function Header() {
               {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
             <Button
-              className="h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-white hover:text-black hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] active:bg-white active:text-black active:shadow-none md:h-[72px] md:min-w-[142px] md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] md:hover:translate-x-[4px] md:hover:translate-y-[4px] md:active:translate-x-[4px] md:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
+              className="h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] md:h-[72px] md:min-w-[142px] md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] md:hover:translate-x-[4px] md:hover:translate-y-[4px] md:active:translate-x-[4px] md:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
             >
               Get Started
             </Button>
@@ -122,13 +122,13 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <nav className="border-t border-white/10 bg-[#0B3C5D] font-nav md:hidden">
+        <nav className="border-t border-white/10 bg-brand-navy font-nav md:hidden">
           <SiteContainer className="flex flex-col py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="py-3 text-sm font-bold uppercase tracking-[0.125em] text-white transition-colors hover:text-[#F17A28]"
+                className="py-3 text-sm font-bold uppercase tracking-[0.125em] text-white transition-colors hover:text-brand-aqua"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -140,7 +140,7 @@ export function Header() {
 
       <div
         className={cn(
-          "h-[3px] w-full origin-center bg-[#F17A28] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          "h-[3px] w-full origin-center bg-brand-aqua transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
           scrolled ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
         )}
         aria-hidden="true"

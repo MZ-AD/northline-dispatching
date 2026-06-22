@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${openSans.variable} ${oswald.variable} h-full antialiased`}>
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full bg-brand-mist text-brand-navy">{children}</body>
     </html>
   );
 }

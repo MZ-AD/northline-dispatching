@@ -10,12 +10,12 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t-[8px] border-[#FF781F] bg-[#121212] text-white">
+    <footer className="border-t-[8px] border-brand-aqua bg-brand-navy text-white">
       <SiteContainer className="pt-12 pb-6 sm:pt-14 sm:pb-8">
         <div className="grid gap-10 md:grid-cols-3 md:gap-12 lg:gap-16">
           <div>
             <Logo />
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-[#A0A0A0] sm:text-[15px]">
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/70 sm:text-[15px]">
               Premium dispatching services designed exclusively for independent
               owner-operators and small fleets. We handle the office, you handle
               the road.
@@ -31,7 +31,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#A0A0A0] transition-colors hover:text-white sm:text-[15px]"
+                    className="text-sm text-white/70 transition-colors hover:text-brand-aqua sm:text-[15px]"
                   >
                     {link.label}
                   </Link>
@@ -46,7 +46,7 @@ export function Footer() {
             </h3>
             <Link
               href="mailto:info@baywooddispatch.com"
-              className="mt-5 inline-block text-sm text-[#A0A0A0] transition-colors hover:text-white sm:text-[15px]"
+              className="mt-5 inline-block text-sm text-white/70 transition-colors hover:text-brand-aqua sm:text-[15px]"
             >
               info@baywooddispatch.com
             </Link>
@@ -54,19 +54,19 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-center">
-          <p className="text-xs uppercase tracking-wide text-[#A0A0A0]">
+          <p className="text-xs uppercase tracking-wide text-white/70">
             &copy; {new Date().getFullYear()} Sam Anderson Dispatch.
           </p>
           <div className="flex gap-6">
             <Link
               href="#"
-              className="text-xs uppercase tracking-wide text-[#A0A0A0] transition-colors hover:text-white"
+              className="text-xs uppercase tracking-wide text-white/70 transition-colors hover:text-brand-aqua"
             >
               Privacy
             </Link>
             <Link
               href="#"
-              className="text-xs uppercase tracking-wide text-[#A0A0A0] transition-colors hover:text-white"
+              className="text-xs uppercase tracking-wide text-white/70 transition-colors hover:text-brand-aqua"
             >
               Terms
             </Link>
