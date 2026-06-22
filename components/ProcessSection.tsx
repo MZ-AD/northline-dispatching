@@ -23,11 +23,11 @@ const steps = [
 ];
 
 const stepTitleClassName =
-  "font-display text-lg font-bold uppercase leading-none tracking-tight text-[#111827] sm:text-xl md:text-2xl";
+  "font-display text-xl font-bold uppercase leading-none tracking-tight text-[#111827] sm:text-2xl md:text-[1.875rem] lg:text-3xl";
 
 function StepNumber({ number }: { number: string }) {
   return (
-    <div className="group relative z-10 flex h-20 w-[88px] -skew-x-12 items-center justify-center border-4 border-[#E5E7EB] bg-white transition-colors duration-300 hover:border-[#FF6B00] sm:h-[84px] sm:w-[96px]">
+    <div className="group relative z-10 flex h-[88px] w-[84px] -skew-x-12 items-center justify-center border-4 border-[#E5E7EB] bg-white transition-colors duration-300 hover:border-[#FF6B00] sm:h-[96px] sm:w-[96px]">
       <span className="skew-x-12 font-sans text-[1.85rem] font-bold leading-none tracking-[-0.03em] text-[#0B3C5D] transition-colors duration-300 group-hover:text-[#FF6B00] sm:text-[2.1rem]">
         {number}
       </span>
@@ -57,7 +57,7 @@ export function ProcessSection() {
         <div className="mt-20 sm:mt-24">
           <div className="relative mx-auto w-full max-w-4xl lg:max-w-5xl">
             <div
-              className="pointer-events-none absolute inset-x-0 hidden h-[4px] bg-[#E5E7EB] md:top-[calc(5.25rem+2.5rem+0.75rem)] md:block lg:top-[calc(5.25rem+2.5rem+1rem)]"
+              className="pointer-events-none absolute inset-x-0 hidden h-[4px] bg-[#E5E7EB] md:top-[calc(5.5rem+2.5rem+1rem)] md:block lg:top-[calc(6rem+2.5rem+1.125rem)]"
               aria-hidden="true"
             />
 
@@ -77,7 +77,7 @@ export function ProcessSection() {
                     </h3>
                   </div>
 
-                  <p className="mt-6 max-w-[15rem] text-sm leading-relaxed text-[#6B7280] sm:max-w-[16rem] sm:text-[15px]">
+                  <p className="mt-6 max-w-[16rem] text-base leading-relaxed text-[#6B7280] sm:max-w-[18rem] sm:text-[17px] md:text-lg">
                     {step.description}
                   </p>
                 </article>
