@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { SiteContainer } from "@/components/SiteContainer";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -40,6 +41,7 @@ export function Logo({ className = "", compact = false }: { className?: string; 
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -48,13 +50,23 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
         scrolled
           ? "bg-[#0B3C5D] pt-0"
-          : "bg-transparent pt-2 sm:pt-3 md:pt-4"
+          : mobileOpen
+            ? "bg-[#0B3C5D] pt-2 sm:pt-3"
+            : "bg-transparent pt-2 sm:pt-3 md:pt-4"
       )}
     >
       <div
@@ -85,12 +97,21 @@ export function Header() {
 
           <div
             className={cn(
-              "ml-auto shrink-0 translate-x-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:translate-x-2",
+              "ml-auto flex shrink-0 items-center gap-2 translate-x-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:translate-x-2",
               scrolled
                 ? "translate-y-0"
                 : "-translate-y-0.5 md:-translate-y-1"
             )}
           >
+            <button
+              type="button"
+              className="flex h-11 w-11 items-center justify-center text-white md:hidden"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((open) => !open)}
+            >
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
             <Button
               className="h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-white hover:text-black hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] active:bg-white active:text-black active:shadow-none md:h-[72px] md:min-w-[142px] md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] md:hover:translate-x-[4px] md:hover:translate-y-[4px] md:active:translate-x-[4px] md:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
             >
@@ -99,6 +120,23 @@ export function Header() {
           </div>
         </SiteContainer>
       </div>
+
+      {mobileOpen && (
+        <nav className="border-t border-white/10 bg-[#0B3C5D] font-nav md:hidden">
+          <SiteContainer className="flex flex-col py-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="py-3 text-sm font-bold uppercase tracking-[0.125em] text-white transition-colors hover:text-[#F17A28]"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </SiteContainer>
+        </nav>
+      )}
 
       <div
         className={cn(
