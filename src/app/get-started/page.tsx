@@ -13,7 +13,7 @@ export default function GetStartedPage() {
   return (
     <>
       <Header variant="page" />
-      <main className="bg-brand-mist pt-[80px] sm:pt-[84px] md:pt-24">
+      <main className="min-w-0 overflow-x-clip bg-brand-mist pt-[80px] sm:pt-[84px] md:pt-24">
         <GetStartedContent />
       </main>
       <Footer />

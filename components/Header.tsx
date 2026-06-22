@@ -56,7 +56,7 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
           showSolidHeader ? "h-20 sm:h-[84px] md:h-24" : "h-[72px] sm:h-24 md:h-[104px]"
         )}
       >
-        <SiteContainer className="relative flex h-full items-center">
+        <SiteContainer className="relative flex h-full min-w-0 items-center">
           <Logo compact={showSolidHeader} />
 
           <nav

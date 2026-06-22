@@ -66,7 +66,7 @@ export function WhyChooseUs() {
             </ul>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:-mt-6 lg:max-w-none xl:-mt-8">
+          <div className="relative mx-auto w-full min-w-0 max-w-md overflow-hidden lg:mx-0 lg:-mt-6 lg:max-w-none xl:-mt-8">
             <div
               className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-brand-aqua sm:translate-x-2 sm:translate-y-2"
               aria-hidden="true"

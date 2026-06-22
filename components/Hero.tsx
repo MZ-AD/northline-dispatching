@@ -71,7 +71,7 @@ export function Hero() {
       </div>
 
       <SiteContainer className="relative z-20 py-10 sm:py-20 lg:py-28">
-        <div className="max-w-6xl text-left max-md:pl-4 md:pl-0 lg:max-w-7xl">
+        <div className="max-w-6xl min-w-0 text-left max-md:pl-4 md:pl-0 lg:max-w-7xl">
           <div className="hidden -skew-x-12 bg-brand-aqua px-5 py-2 lg:mb-6 lg:inline-block">
             <span className="inline-block skew-x-12 text-[10px] font-bold uppercase tracking-[0.15em] text-white sm:text-sm">
               Premium Logistics
@@ -79,11 +79,11 @@ export function Hero() {
           </div>
 
           {/* Mobile & tablet: 2-line headline like reference */}
-          <h1 className="font-display font-bold uppercase tracking-tighter lg:hidden">
-            <span className="block whitespace-nowrap text-[clamp(1.65rem,7.8vw,3rem)] leading-[0.92] text-white">
+          <h1 className="font-display max-w-full font-bold uppercase tracking-tighter lg:hidden">
+            <span className="block text-[clamp(1.45rem,6.5vw,3rem)] leading-[0.92] text-white">
               We Keep Your Truck
             </span>
-            <span className="mt-1 block whitespace-nowrap text-[clamp(1.65rem,7.8vw,3rem)] leading-[0.92] text-brand-aqua">
+            <span className="mt-1 block text-[clamp(1.45rem,6.5vw,3rem)] leading-[0.92] text-brand-aqua">
               Moving &amp; Earning.
             </span>
           </h1>
@@ -97,7 +97,7 @@ export function Hero() {
           </h1>
         </div>
 
-        <div className="mt-5 max-w-3xl text-left max-md:pl-4 sm:mt-4 md:mt-3 md:pl-0">
+        <div className="mt-5 max-w-3xl min-w-0 text-left max-md:pl-4 sm:mt-4 md:mt-3 md:pl-0">
           <p className="max-w-2xl border-l-2 border-brand-aqua pl-3 text-[15px] leading-relaxed text-white/75 sm:max-w-3xl sm:pl-5 sm:text-xl md:text-2xl lg:max-w-4xl">
             Stop fighting with brokers. Our dispatchers negotiate the highest
             rates so you can focus on the road.

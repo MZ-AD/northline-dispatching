@@ -4,6 +4,7 @@ import {
   FileText,
   Frown,
 } from "lucide-react";
+import { FitTwoLineText } from "@/components/FitTwoLineText";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SiteContainer } from "@/components/SiteContainer";
 
@@ -102,15 +103,13 @@ export function ProblemSection() {
               />
             </div>
             <div className="h-1 shrink-0 bg-brand-aqua" aria-hidden="true" />
-            <div className="bg-brand-navy px-8 py-8 sm:px-10 sm:py-9">
-              <p className="text-lg font-bold italic leading-snug text-white sm:text-xl">
-                &ldquo;I used to spend 3 hours a day just trying to find my next
-                load.
-                <br />
-                Not anymore.&rdquo;
-              </p>
-              <p className="font-display mt-2 text-base font-bold uppercase leading-tight tracking-wider text-brand-aqua sm:text-lg">
-                Client Testimonial
+            <div className="bg-brand-navy px-4 py-8 sm:px-8 sm:py-9 lg:px-6 xl:px-8">
+              <FitTwoLineText maxFontSize={18} minFontSize={10} smMaxFontSize={20}>
+                &ldquo;I used to spend hours on load boards every day. Now my
+                dispatcher Nick handles that and I focus on driving.&rdquo;
+              </FitTwoLineText>
+              <p className="mt-2.5 text-right text-lg font-bold italic leading-tight text-brand-aqua sm:mt-3 sm:text-xl">
+                - Kurt M
               </p>
             </div>
           </div>
