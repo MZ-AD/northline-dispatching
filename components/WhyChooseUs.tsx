@@ -39,9 +39,9 @@ export function WhyChooseUs() {
               <span className="text-[#FF6B00]">Choose Us</span>
             </h2>
 
-            <p className="mt-6 text-base leading-relaxed text-white/85 sm:text-lg">
-              We aren&apos;t just finding loads; we&apos;re building a profitable
-              business together.
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/70 sm:max-w-3xl sm:text-base md:text-lg">
+              We aren&apos;t just finding loads; we&apos;re building a
+              profitable business together.
               <br />
               Our success is directly tied to your success.
             </p>

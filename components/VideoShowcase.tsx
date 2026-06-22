@@ -1,28 +1,39 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { SiteContainer } from "@/components/SiteContainer";
-import { Badge } from "@/components/ui/badge";
 
 export function VideoShowcase() {
   return (
-    <section className="relative overflow-hidden bg-[#0B1C2E] py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-[#0b1219] py-20 sm:py-28">
       <div
-        className="absolute inset-0 opacity-10"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 85% 70% at 0% 0%, rgba(160, 75, 35, 0.28) 0%, rgba(11, 18, 25, 0) 58%)",
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.14]"
         style={{
           backgroundImage:
-            "linear-gradient(30deg, #F17A28 12%, transparent 12.5%, transparent 87%, #F17A28 87.5%, #F17A28), linear-gradient(150deg, #F17A28 12%, transparent 12.5%, transparent 87%, #F17A28 87.5%, #F17A28), linear-gradient(30deg, #F17A28 12%, transparent 12.5%, transparent 87%, #F17A28 87.5%, #F17A28), linear-gradient(150deg, #F17A28 12%, transparent 12.5%, transparent 87%, #F17A28 87.5%, #F17A28)",
-          backgroundSize: "80px 140px",
+            "url(\"data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='0.75' fill='%23ffffff'/%3E%3C/svg%3E\")",
         }}
+        aria-hidden="true"
       />
 
-      <SiteContainer className="relative">
+      <SiteContainer className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <Badge className="mb-4">See Inside</Badge>
-          <h2 className="text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
+          <div className="mb-6 inline-block -skew-x-12 bg-[#FF6B00] px-5 py-2">
+            <span className="font-display inline-block skew-x-12 text-xs font-bold uppercase tracking-tighter text-white sm:text-sm">
+              See Inside
+            </span>
+          </div>
+          <h2 className="font-display text-3xl font-bold uppercase leading-[1.1] tracking-tighter text-white sm:text-4xl lg:text-5xl">
             Watch How We{" "}
-            <span className="text-[#F17A28]">Scale Your Business</span>
+            <span className="text-[#FF6B00]">Scale</span> Your Business
           </h2>
-          <p className="mt-6 text-lg text-white/70">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/70 sm:max-w-3xl sm:text-base md:text-lg">
             Take 90 seconds to see exactly how our dedicated dispatchers operate
             to keep your trucks moving and your revenue growing.
           </p>

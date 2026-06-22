@@ -1,7 +1,5 @@
 import { SiteContainer } from "@/components/SiteContainer";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 const steps = [
   {
@@ -24,44 +22,74 @@ const steps = [
   },
 ];
 
+const stepTitleClassName =
+  "font-display text-lg font-bold uppercase leading-none tracking-tight text-[#111827] sm:text-xl md:text-2xl";
+
+function StepNumber({ number }: { number: string }) {
+  return (
+    <div className="group relative z-10 flex h-20 w-[88px] -skew-x-12 items-center justify-center border-4 border-[#E5E7EB] bg-white transition-colors duration-300 hover:border-[#FF6B00] sm:h-[84px] sm:w-[96px]">
+      <span className="skew-x-12 font-sans text-[1.85rem] font-bold leading-none tracking-[-0.03em] text-[#0B3C5D] transition-colors duration-300 group-hover:text-[#FF6B00] sm:text-[2.1rem]">
+        {number}
+      </span>
+    </div>
+  );
+}
+
 export function ProcessSection() {
   return (
     <section id="process" className="bg-white py-20 sm:py-28">
       <SiteContainer>
         <div className="mx-auto max-w-3xl text-center">
-          <Badge variant="navy" className="mb-4">
-            Onboarding
-          </Badge>
-          <h2 className="text-3xl font-black uppercase leading-tight text-[#111827] sm:text-4xl lg:text-5xl">
-            Simple{" "}
-            <span className="text-[#F17A28]">3-Step Process</span>
+          <div className="mb-6 inline-block -skew-x-12 bg-[#0B3C5D] px-5 py-2">
+            <span className="font-display inline-block skew-x-12 text-xs font-bold uppercase tracking-tighter text-white sm:text-sm">
+              Onboarding
+            </span>
+          </div>
+          <h2 className="font-display text-3xl font-bold uppercase leading-[1.1] tracking-tighter text-[#111827] sm:text-4xl lg:text-5xl">
+            Simple <span className="text-[#FF6B00]">3-Step</span> Process
           </h2>
-          <p className="mt-6 text-lg text-[#4B5563]">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-[#4B5563] sm:max-w-3xl sm:text-base md:text-lg">
             Getting started is fast and easy. We can have you onboarded and
             running your first high-paying load within 24 hours.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {steps.map((step) => (
-            <Card key={step.number} className="relative border-gray-200">
-              <CardContent className="p-8">
-                <span className="text-5xl font-black text-gray-100">
-                  {step.number}
-                </span>
-                <h3 className="mt-4 text-lg font-bold uppercase tracking-wide text-[#111827]">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#4B5563]">
-                  {step.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mt-20 sm:mt-24">
+          <div className="relative mx-auto w-full max-w-4xl lg:max-w-5xl">
+            <div
+              className="pointer-events-none absolute inset-x-0 hidden h-[4px] bg-[#E5E7EB] md:top-[calc(5.25rem+2.5rem+0.75rem)] md:block lg:top-[calc(5.25rem+2.5rem+1rem)]"
+              aria-hidden="true"
+            />
+
+            <div className="relative z-10 grid gap-10 md:grid-cols-3 md:gap-2 lg:gap-3">
+              {steps.map((step) => (
+                <article
+                  key={step.number}
+                  className="flex flex-col items-center text-center"
+                >
+                  <StepNumber number={step.number} />
+
+                  <div className="mt-8 flex w-full items-center justify-center sm:mt-10">
+                    <h3
+                      className={`relative z-10 bg-white px-4 py-0.5 ${stepTitleClassName}`}
+                    >
+                      {step.title}
+                    </h3>
+                  </div>
+
+                  <p className="mt-6 max-w-[15rem] text-sm leading-relaxed text-[#6B7280] sm:max-w-[16rem] sm:text-[15px]">
+                    {step.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <Button size="xl">Book a Free Call</Button>
+        <div className="mt-14 text-center sm:mt-16">
+          <Button className="font-display h-[72px] rounded-none bg-[#FF781F] px-10 text-lg font-bold uppercase tracking-[0.15em] text-white shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-[#0B3C5D] hover:text-white hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] active:bg-[#0B3C5D] active:text-white active:shadow-none sm:h-[94px] sm:px-12 sm:text-xl sm:shadow-[4px_4px_0_0_rgba(0,0,0,0.4)] sm:hover:translate-x-[4px] sm:hover:translate-y-[4px] sm:active:translate-x-[4px] sm:active:translate-y-[4px] md:text-2xl">
+            Book a Free Call
+          </Button>
         </div>
       </SiteContainer>
     </section>
