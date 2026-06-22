@@ -45,17 +45,17 @@ export function Footer() {
               Contact
             </h3>
             <Link
-              href="mailto:contact@northlinedispatching.com"
+              href="mailto:info@baywooddispatch.com"
               className="mt-5 inline-block text-sm text-[#A0A0A0] transition-colors hover:text-white sm:text-[15px]"
             >
-              contact@northlinedispatching.com
+              info@baywooddispatch.com
             </Link>
           </div>
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-center">
           <p className="text-xs uppercase tracking-wide text-[#A0A0A0]">
-            &copy; {new Date().getFullYear()} Northline Dispatching.
+            &copy; {new Date().getFullYear()} Sam Anderson Dispatch.
           </p>
           <div className="flex gap-6">
             <Link

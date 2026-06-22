@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Compass } from "lucide-react";
 import { SiteContainer } from "@/components/SiteContainer";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -16,21 +15,7 @@ const navLinks = [
 
 export function Logo({ className = "", compact = false }: { className?: string; compact?: boolean }) {
   return (
-    <Link href="/" className={cn("flex min-w-0 items-center gap-2 sm:gap-3", className)}>
-      <div
-        className={cn(
-          "flex shrink-0 -skew-x-12 items-center justify-center bg-[#F17A28] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-          compact ? "h-8 w-8 sm:h-9 sm:w-9" : "h-9 w-9 sm:h-11 sm:w-11"
-        )}
-      >
-        <Compass
-          className={cn(
-            "skew-x-12 text-white transition-all duration-500",
-            compact ? "h-3.5 w-3.5 sm:h-4 sm:w-4" : "h-4 w-4 sm:h-5 sm:w-5"
-          )}
-          strokeWidth={2.5}
-        />
-      </div>
+    <Link href="/" className={cn("flex min-w-0 items-center", className)}>
       <div className="flex min-w-0 flex-col leading-none">
         <span
           className={cn(
@@ -38,10 +23,10 @@ export function Logo({ className = "", compact = false }: { className?: string; 
             compact ? "text-sm sm:text-base" : "text-base sm:text-lg"
           )}
         >
-          NORTHLINE
+          SAM ANDERSON
         </span>
         <span className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.25em] text-[#F17A28] sm:mt-1 sm:text-[10px] sm:tracking-[0.3em]">
-          Dispatching
+          Dispatch
         </span>
       </div>
     </Link>

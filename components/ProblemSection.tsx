@@ -40,8 +40,8 @@ export function ProblemSection() {
       <SiteContainer>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-11 xl:gap-14">
           <div>
-            <div className="mb-6 inline-block -skew-x-12 bg-[#0B3C5D] px-5 py-2">
-              <span className="font-display inline-block skew-x-12 text-xs font-bold uppercase tracking-tighter text-white sm:text-sm">
+            <div className="mb-6 inline-block -skew-x-12 bg-[#0B3C5D] px-4 py-1 sm:px-5">
+              <span className="font-display inline-block skew-x-12 text-[10px] font-bold uppercase leading-none tracking-[0.15em] text-white sm:text-xs md:text-sm">
                 The Problem
               </span>
             </div>
@@ -51,7 +51,7 @@ export function ProblemSection() {
               </span>
               <span className="block text-[#FF6B00]">Independent Operator</span>
             </h2>
-            <p className="mt-6 text-base text-[#4B5563] sm:text-lg">
+            <p className="mt-6 border-l-2 border-[#FF6B00] pl-3 text-base text-[#4B5563] sm:pl-4 sm:text-lg">
               You got into the trucking business for freedom and profit, but
               instead you&apos;re finding yourself acting as a full-time
               secretary, negotiator, and dispatcher.
@@ -61,7 +61,7 @@ export function ProblemSection() {
               {painPoints.map((point) => (
                 <div
                   key={point.title}
-                  className="flex min-h-[112px] items-center gap-4 border border-[#E5E7EB] border-l-[6px] border-l-[#FF6B00] bg-white px-4 py-4 shadow-[0_2px_12px_rgba(10,35,66,0.08)] sm:gap-6 sm:px-6 lg:h-[112px]"
+                  className="flex min-h-[112px] items-center gap-4 border border-[#E5E7EB] border-l-[5px] border-l-[#FF6B00] bg-white px-4 py-4 shadow-[0_2px_12px_rgba(10,35,66,0.08)] sm:gap-6 sm:px-6 lg:h-[112px]"
                 >
                   <div className="flex h-12 w-12 shrink-0 -skew-x-12 items-center justify-center bg-[#FFF4ED] sm:h-14 sm:w-14">
                     <point.icon
@@ -97,7 +97,7 @@ export function ProblemSection() {
               />
             </div>
             <div className="h-1 shrink-0 bg-[#FF6B00]" aria-hidden="true" />
-            <div className="bg-gradient-to-r from-[#001f33] via-[#002B49] to-[#0a3a58] px-8 py-8 sm:px-10 sm:py-9">
+            <div className="bg-[#0B3C5D] px-8 py-8 sm:px-10 sm:py-9">
               <p className="text-lg font-bold italic leading-snug text-white sm:text-xl">
                 &ldquo;I used to spend 3 hours a day just trying to find my next
                 load.

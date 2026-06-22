@@ -28,8 +28,8 @@ export function WhyChooseUs() {
       <SiteContainer>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-14 xl:gap-16">
           <div>
-            <div className="mb-6 inline-block -skew-x-12 bg-[#FF6B00] px-5 py-2">
-              <span className="font-display inline-block skew-x-12 text-xs font-bold uppercase tracking-tighter text-white sm:text-sm">
+            <div className="mb-6 inline-block -skew-x-12 bg-[#FF6B00] px-4 py-1 sm:px-5">
+              <span className="font-display inline-block skew-x-12 text-[10px] font-bold uppercase leading-none tracking-[0.15em] text-white sm:text-xs md:text-sm">
                 The Advantage
               </span>
             </div>

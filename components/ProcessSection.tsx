@@ -40,8 +40,8 @@ export function ProcessSection() {
     <section id="process" className="bg-white py-20 sm:py-28">
       <SiteContainer>
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 inline-block -skew-x-12 bg-[#0B3C5D] px-5 py-2">
-            <span className="font-display inline-block skew-x-12 text-xs font-bold uppercase tracking-tighter text-white sm:text-sm">
+          <div className="mb-6 inline-block -skew-x-12 bg-[#0B3C5D] px-4 py-1 sm:px-5">
+            <span className="font-display inline-block skew-x-12 text-[10px] font-bold uppercase leading-none tracking-[0.15em] text-white sm:text-xs md:text-sm">
               Onboarding
             </span>
           </div>

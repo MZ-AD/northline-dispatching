@@ -20,7 +20,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Northline Dispatching | Truck Dispatch Service | Higher Paying Loads",
+  title: "Sam Anderson Dispatch | Truck Dispatch Service | Higher Paying Loads",
   description:
     "Stop fighting with brokers. Our dispatchers negotiate the highest rates so you can focus on the road.",
 };
