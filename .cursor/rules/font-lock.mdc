@@ -1,0 +1,28 @@
+---
+description: Do not change fonts without explicit double confirmation from the user
+alwaysApply: true
+---
+
+# Font Lock — Do Not Change
+
+**Never change fonts** in this project unless the user confirms twice in the same conversation that they want a font change.
+
+This applies even when the user asks for styling, typography, or design updates that might normally imply a font change. Treat any such request as non-font-related unless fonts are explicitly and repeatedly confirmed.
+
+## Before any font change
+
+1. Stop and ask the user to confirm they want a font change.
+2. Ask a second time after they confirm once.
+3. Only proceed after both confirmations.
+
+## Locked font assignments
+
+| Area | Font | Where |
+|------|------|-------|
+| Body / default site | **Inter** | `layout.tsx`, `globals.css` (`--font-sans`) |
+| Navbar links | **Open Sans** | `Header.tsx` (`font-nav`), `globals.css` (`--font-nav`) |
+| Hero title (H1) | **Oswald** | `Hero.tsx` (`font-display`), `globals.css` (`--font-display`) |
+
+Do not swap, remove, or add fonts. Do not change `font-family`, `next/font` imports, `--font-*` CSS variables, or typography utility classes (`font-sans`, `font-nav`, `font-display`, `font-bold` weight changes for font-family purposes) without the double-confirmation process above.
+
+If a task can be done without touching fonts (spacing, color, size via layout, etc.), prefer that approach.
