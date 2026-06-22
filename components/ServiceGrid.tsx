@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 import {
   ClipboardList,
   FileCheck,
@@ -7,7 +8,6 @@ import {
 } from "lucide-react";
 import { SiteContainer } from "@/components/SiteContainer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
@@ -42,6 +42,39 @@ const services = [
   },
 ];
 
+function ServiceIcon({ icon: Icon }: { icon: LucideIcon }) {
+  return (
+    <span className="flex h-11 w-11 shrink-0 -skew-x-[20deg] items-center justify-center bg-[#0B3C5D] transition-colors duration-300 group-hover:bg-[#FF6B00] sm:h-12 sm:w-12">
+      <Icon
+        className="h-5 w-5 skew-x-[20deg] text-white sm:h-[22px] sm:w-[22px]"
+        strokeWidth={2}
+      />
+    </span>
+  );
+}
+
+function ServiceCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}) {
+  return (
+    <article className="group relative border-r border-b border-[#E5E7EB] bg-white p-8 transition-colors duration-300 ease-out hover:bg-gray-50 sm:p-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:origin-top before:scale-y-0 before:bg-[#FF6B00] before:transition-transform before:duration-300 before:ease-out before:content-[''] group-hover:before:scale-y-100">
+      <ServiceIcon icon={icon} />
+      <h3 className="font-display mt-6 text-lg font-bold uppercase leading-tight tracking-tight text-[#111827] sm:text-xl">
+        {title}
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-[#4B5563] sm:text-[15px]">
+        {description}
+      </p>
+    </article>
+  );
+}
+
 export function ServiceGrid() {
   return (
     <section id="services" className="bg-[#F9FAFB] py-20 sm:py-28">
@@ -66,39 +99,25 @@ export function ServiceGrid() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 border-l border-t border-[#E5E7EB] md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Card
-              key={service.title}
-              className="border-gray-200 bg-white transition-shadow hover:shadow-md"
-            >
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0B1C2E]/10">
-                  <service.icon className="h-5 w-5 text-[#0B1C2E]" />
-                </div>
-                <h3 className="text-base font-bold uppercase tracking-wide text-[#111827]">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#4B5563]">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
+            <ServiceCard key={service.title} {...service} />
           ))}
 
-          <Card className="border-[#0B1C2E] bg-[#0B1C2E] text-white">
-            <CardContent className="flex h-full flex-col justify-center p-6">
-              <h3 className="text-xl font-bold uppercase tracking-wide">
-                Ready to upgrade?
-              </h3>
-              <p className="mt-3 text-white/80">
-                Stop leaving money on the table.
-              </p>
-              <Button variant="white" size="lg" className="mt-6 w-fit">
-                Book a Free Call
-              </Button>
-            </CardContent>
-          </Card>
+          <article className="flex flex-col justify-center border-r border-b border-[#E5E7EB] bg-[#0B3C5D] p-8 text-white sm:p-10">
+            <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight sm:text-2xl">
+              Ready to upgrade?
+            </h3>
+            <p className="mt-3 text-sm text-white/80 sm:text-base">
+              Stop leaving money on the table.
+            </p>
+            <Button
+              variant="white"
+              className="mt-8 h-14 w-full rounded-none text-sm font-bold uppercase tracking-[0.15em] sm:mt-10"
+            >
+              Book a Free Call
+            </Button>
+          </article>
         </div>
       </SiteContainer>
     </section>
