@@ -33,7 +33,7 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
 
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth >= 768) setMobileOpen(false);
+      if (window.innerWidth >= 901) setMobileOpen(false);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -61,8 +61,8 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
 
           <nav
             className={cn(
-              "absolute left-[calc(50%+14px)] hidden -translate-x-1/2 -translate-y-1/2 items-center gap-7 font-nav transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:flex md:left-[calc(50%+18px)] lg:gap-9",
-              showSolidHeader ? "top-[calc(50%-4px)]" : "top-[calc(50%-4px)] md:top-[calc(50%-6px)]"
+              "absolute left-[calc(50%+14px)] hidden -translate-x-1/2 -translate-y-1/2 items-center gap-7 font-nav transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] nav:flex nav:left-[calc(50%+18px)] lg:gap-9",
+              showSolidHeader ? "top-[calc(50%-4px)]" : "top-[calc(50%-4px)] nav:top-[calc(50%-6px)]"
             )}
           >
             {navLinks.map((link) => (
@@ -86,7 +86,7 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
           >
             <button
               type="button"
-              className="flex h-11 w-11 items-center justify-center rounded-none bg-brand-aqua text-white md:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-none bg-brand-aqua text-white nav:hidden"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}
@@ -95,7 +95,7 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
             </button>
             <Button
               asChild
-              className="hidden h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] md:inline-flex md:h-[72px] md:min-w-[142px] md:px-8 md:text-sm md:shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] md:hover:translate-x-[4px] md:hover:translate-y-[4px] md:active:translate-x-[4px] md:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
+              className="hidden h-12 min-w-[112px] rounded-none px-5 text-xs font-bold uppercase tracking-[0.15em] shadow-[3px_3px_0_0_rgba(0,0,0,0.35)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-brand-aqua-dark hover:shadow-none active:translate-x-[3px] active:translate-y-[3px] nav:inline-flex nav:h-[72px] nav:min-w-[142px] nav:px-8 nav:text-sm nav:shadow-[4px_4px_0_0_rgba(0,0,0,0.35)] nav:hover:translate-x-[4px] nav:hover:translate-y-[4px] nav:active:translate-x-[4px] nav:active:translate-y-[4px] lg:h-[79px] lg:min-w-[158px] lg:px-9"
             >
               <Link href={GET_STARTED_PATH}>Get Started</Link>
             </Button>
@@ -104,7 +104,7 @@ export function Header({ variant = "home" }: { variant?: "home" | "page" }) {
       </div>
 
       {mobileOpen && (
-        <nav className="border-t border-white/10 bg-brand-navy font-nav md:hidden">
+        <nav className="border-t border-white/10 bg-brand-navy font-nav nav:hidden">
           <SiteContainer className="flex flex-col py-4">
             {navLinks.map((link) => (
               <Link
