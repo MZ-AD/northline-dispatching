@@ -106,8 +106,8 @@ export function GetStartedForm({ className }: { className?: string }) {
           Get Started
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-brand-navy sm:text-base">
-          Complete the form below and we&apos;ll confirm whether your operation
-          is a fit for our dispatch program.
+          Complete the form below and we&apos;ll contact you within 4–6 hours to
+          discuss how we can help you.
         </p>
       </div>
 
@@ -138,6 +138,20 @@ export function GetStartedForm({ className }: { className?: string }) {
             placeholder="you@example.com"
             value={formData.email}
             onChange={(event) => updateField("email", event.target.value)}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="phoneNumber">Phone Number</Label>
+          <Input
+            id="phoneNumber"
+            name="phoneNumber"
+            type="tel"
+            autoComplete="tel"
+            required
+            placeholder="(555) 000-0000"
+            value={formData.phoneNumber}
+            onChange={(event) => updateField("phoneNumber", event.target.value)}
           />
         </div>
 

@@ -5,6 +5,7 @@ export type QualificationAnswer = "yes" | "no" | "";
 export type GetStartedFormData = {
   fullName: string;
   email: string;
+  phoneNumber: string;
   mcAuthority: QualificationAnswer;
   insuranceCoverage: QualificationAnswer;
   operateAcrossStateLines: QualificationAnswer;
@@ -14,6 +15,7 @@ export type GetStartedFormData = {
 export const initialGetStartedFormData: GetStartedFormData = {
   fullName: "",
   email: "",
+  phoneNumber: "",
   mcAuthority: "",
   insuranceCoverage: "",
   operateAcrossStateLines: "",
@@ -79,6 +81,7 @@ export async function submitGetStartedForm(
         from_name: data.fullName,
         name: data.fullName,
         email: data.email,
+        phone: data.phoneNumber,
         botcheck: "",
         mc_authority_active_1_year: formatAnswer(data.mcAuthority),
         active_insurance_coverage: formatAnswer(data.insuranceCoverage),
